@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // 👉 Para SQL Server, basta trocar a linha acima por:
+  // provider = "sqlserver"
+  // url      = env("MSSQL_URL")
+}
+
+model User {
+  id        Int           @id @default(autoincrement())
+  user_name      String
+  email     String        @unique
+  user_password  String
+  createdAt DateTime      @default(now())
+  transactions Transaction[]
+}
+
+model Transaction {
+  id        Int       @id @default(autoincrement())
+  title     String
+  amount    Float
+  type      String     // 'income' | 'expense'
+  createdAt DateTime   @default(now())
+  userId    Int
+  user      User       @relation(fields: [userId], references: [id])
+}
