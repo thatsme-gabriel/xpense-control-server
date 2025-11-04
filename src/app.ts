@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import { swaggerSpec } from './config/swagger';
+import { swaggerSpec } from './config/swagger.js';
 // import { errorHandler } from './middlewares/errorHandler';
 // import { authRoutes } from './routes/auth.routes';
 // import { transactionRoutes } from './routes/transaction.routes';

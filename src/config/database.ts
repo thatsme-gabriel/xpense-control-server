@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
+
 export const prisma = new PrismaClient();
 
 // Se quiser usar SQL Server em vez do Postgres:

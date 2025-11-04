@@ -2,9 +2,9 @@
   "name": "xpensecontrolserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
+    "dev": "node --loader ts-node/esm --watch src/server.ts",
     "build": "tsc"
   },
   "keywords": [],
